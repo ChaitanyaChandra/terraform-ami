@@ -22,7 +22,7 @@ resource "null_resource" "app-deploy" {
     }
 
     inline = [
-      "ansible-pull -U https://github.com/ChaitanyaChandra/ansible-lab.git spec-pull.yml -e COMPONENT=${var.COMPONENT} -e ENV=${var.ENV} -e APP_VERSION=${var.APP_VERSION} -e NEXUS_USERNAME=${var.NEXUS_USERNAME} -e NEXUS_PASSWORD=${var.NEXUS_PASSWORD} -e PORJECT=${var.PROJECT} -i hosts"
+      "ansible-pull -U https://github.com/ChaitanyaChandra/ansible-lab.git spec-pull.yml -e COMPONENT=${var.COMPONENT} -e ENV=${var.ENV} -e APP_VERSION=${var.APP_VERSION} -e NEXUS_USERNAME=${var.NEXUS_USERNAME} -e NEXUS_PASSWORD=${var.NEXUS_PASSWORD} -e PROJECT=${var.PROJECT} -i hosts"
     ]
   }
 }
