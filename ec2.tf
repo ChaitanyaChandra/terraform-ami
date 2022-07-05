@@ -1,7 +1,8 @@
 resource "aws_instance" "ami" {
   ami                    = data.aws_ami.ami.id
   instance_type          = "t3.small"
-  vpc_security_group_ids = [aws_security_group.sg.id]
+  vpc_security_group_ids = [data.terraform_remote_state.remote.outputs.aws_sg_id]
+  subnet_id = data.terraform_remote_state.remote.outputs.aws_subnet_id
   tags = {
     Name = "${var.COMPONENT}-ami"
   }
